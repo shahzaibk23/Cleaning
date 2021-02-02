@@ -4,7 +4,7 @@
 After cloning the repo. Run these commands
 
 ```ruby
-house-env/bin/activate
+house-env\bin\activate.bat
 cd houseCleaning
 python manage.py runserver
 ```
