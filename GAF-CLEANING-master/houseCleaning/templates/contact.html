@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+}
+
+.input-fields,
+.msg{
+  width: 48%;
+}
+
+.input-fields .input,
+.msg textarea{
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid orange;
+  padding: 10px;
+  color: black;
+  width: 100%;
+}
+
+.msg textarea{
+  height: 212px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: black;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: black;
+}
+
+.btn {
+    background: orange;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px){
+  .contact-form{
+    flex-direction: column;
+  }
+  .msg textarea{
+    height: 80px;
+  }
+  .input-fields,
+  .msg{
+    width: 100%;
+  }
+}
+    </style>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+
+  </ul>
+	</li>
+      
+  <li class="nav-item">
+    <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+  </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Responsive Contact us form Using HTML and CSS</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="title">
+    <h1>Contact Us Form</h1>
+  </div>
+  <div class="contact-form">
+    <div class="input-fields">
+    <form method="POST"> {% csrf_token %}
+      <input type="text" name="name" class="input" placeholder="Name">
+      <input type="text" name="email" class="input" placeholder="Email Address">
+      <input type="text" name="phone" class="input" placeholder="Phone">
+      <input type="text" name="subject" class="input" placeholder="Subject">
+    
+    </div>
+    <div class="msg">
+      <textarea name="message" placeholder="Message"></textarea>
+      <input type="submit" value="SEND" class="btn">
+    </div>
+    </form>
+  </div>
+</div>
+	
+</body>
+</html>
+   <!-- Site footer -->
+   <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Our Policies</h6>
+          <ul class="footer-links">
+            <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+            <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+            <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+            <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+          
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+            <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+            <li><a href="{% url 'home' %}">Services<a></li>
+           
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+      
+          </p>
+        </div>
+
+        
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>

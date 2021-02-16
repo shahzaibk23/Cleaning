@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Hourly Rate</title>
+</head>
+<body>
+
+    <form method="POST"> {% csrf_token %}
+        <p>ADD NEW VALUE</p>
+        <input type="number" name="rate" />
+        # TODO: ADD ALL THE FIELDS
+        <input type="submit" />
+    </form>
+    
+</body>
+</html> -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="{% url 'home' %}" class="pull-left" ><img src="{% static 'images/logo1.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+         
+	    </ul>
+	</li>
+      
+        </ul>
+        
+        <div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 0;">
+          
+          <a href="{% url 'logout' %}"><button type="button" class="btn btn-outline-success">Logout</button></a>
+         
+        </div>
+
+      
+    </div>
+  </div>
+</nav>
+
+<div>
+    <form class="form-horizontal" method="POST"> {% csrf_token %}
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">HOURLY RATE:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" name="hourlyRate" id="email" placeholder="Enter  " value="{{ panel.rates.hourlyRate }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">OVERTIME RATE:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="pwd" name="overtimeRate" placeholder="Enter  " value="{{ panel.rates.overtimeRate }}">
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">WEEKEND RATE:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="weekendRate" placeholder="Enter  " value="{{ panel.rates.weekendRate }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">BANK HOLIDAY RATE:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="bankHolidayRate" placeholder="Enter  " value="{{ panel.rates.bankHolidayRate}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">SPECIAL RATE:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="specialRate" placeholder="Enter  " value="{{ panel.rates.specialRate }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">HOLIDAY PAY:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="holidayPay" placeholder="Enter  " value="{{ panel.rates.holidayPay }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">SICK PAY:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="sickPay" placeholder="Enter " value="{{ panel.rates.sickPay }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">GROSS PAY:</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" id="pwd" name="grossPay" placeholder="Enter " value="{{ panel.rates.grossPay}}">
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn ">Submit</button>
+          </div>
+        </div>
+      </form>
+</div>

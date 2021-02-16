@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+
+  </ul>
+	</li>
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h1 style="text-align:center">WINDOW CLEANING</h1>
+
+<p>Quality Window Cleaning for Spotless Windows
+    <br>
+    <br>
+    Want to have sparkling smudge-free and streak-free office windows? All you need is the assistance of GAF Cleaning Services for getting the window cleaning in offices and homes done efficiently.
+    <br>
+    <br>
+    We Have the Tools and Skills of Window Cleaning
+    <br>
+    <br>
+    Cleaning a conservatory roofWindow cleaning may seem to be an easy task at a glance, but in reality, it requires a wide range of tools and techniques that only experts can handle. They can easily reach up even to the higher parts of the windows smoothly and clean up the smudges and smears.
+    <br>
+    <br>
+    We clean off the dirt, grease and debris build-ups from the windows to revive its transparency and make it look like brand new
+    <br>
+    <br>
+    <h5>We Carry Out a Meticulous Cleaning</h5>
+    <br>
+    Cleaning window framesNot only the window glasses, but we also clean up the window frames and rails meticulously. We work on improving your property’s look and maintain the cleanliness of the overall window area.
+    <br>
+    <br>
+    We are just one call away from you. We work in flexible timing and so can clean your property windows on time convenient for you.
+    <br>
+    <br>
+    Feel free to get in touch with us, and we will revive your property like never before.
+    <br>
+    <br><br>IF YOU WANT TO HIRE US THEN SIGN UP<br>.</p>
+<div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 780px; top: 675px;">
+  <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-success">Sign Up</button></a>
+</div>
+</div>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Our Policies</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+              <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+              <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+              <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="">Services<a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+        
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>

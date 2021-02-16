@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+  </ul>
+	</li>
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h1 style="text-align:center">PRESSURE WASHING, SCRUBBING AND SWEEPING</h1>
+
+<p style="text-align:center";>Whether it’s concrete, tiles or pavers, polished or raw, GAF Cleaning Services will show your floors who’s boss. We can help restore the appearance of car parks, resurrect dirty pathways, wash and renew building exteriors, flush out warehouse interiors, make reception areas pop, and bring dignity back to sullied common areas or any other space regardless of its size, height or access restrictions.
+    <br>
+    <h6>The right tools for the job</h6>
+    <br>
+    Industrial floor cleaningGAF Cleaning Services prides itself on selecting the most optimally-suited equipment for each job, so that we’re able to deliver the best possible result with costing our clients any more than is absolutely necessary. Depending on your needs we can use handheld equipment, walk-behind or ride-on pressure cleaners or scrubbers, or even truck-mounted pressure cleaners which we use in combination with heavy duty degreaser to treat oil marks and other heavy car park stains.
+    <br>
+    <br>
+    Guaranteed results
+    When you engage GAF Cleaning Services you can count on the outcome you expected. We never promise more than we can deliver and guarantee every cleaning job we perform – if you aren’t satisfied, then we aren’t finished.
+    
+    Get it done right.<br><br>IF YOU WANT TO HIRE US THEN SIGN UP<br>.</p>
+<div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 790px; top: 450px;">
+  <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-success">Sign Up</button></a>
+</div>
+</div>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Our Policies</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+              <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+              <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+              <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="">Services<a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+        
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="{% url 'home' %}" class="pull-left" ><img src="{% static 'images/logo1.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+         
+	    </ul>
+	</li>
+      
+        </ul>
+        
+        <div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 0;">
+          
+          <a href="{% url 'logout' %}"><button type="button" class="btn btn-outline-success">Logout</button></a>
+         
+        </div>
+
+      
+    </div>
+  </div>
+</nav>
+
+
+<div class="content">
+    <h2 class="modal-dialog-centered">DASHBOARD</h2>
+    <hr />
+    <div class="container">
+    <div class="table-responsive">
+    <table class="table table-bordered table-dark">
+      <tbody>
+        <tr>
+          <th scope="row"> TOTAL ORDERS </th>
+          <td> {{ total }} </td>
+        </tr>
+        <tr>
+          <th scope="row"> COMPLETED ORDERS </th>
+          <td> {{ done }} </td> 
+        </tr>
+        <tr>
+          <th scope="row"> ASSIGNED ORDERS </th>
+          <td> {{ assigned }} </td>
+        </tr>
+        <tr>
+          <th scope="row"> PENDING ORDERS </th>
+          <td> {{ pending }} </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+
+    <hr />
+    <a href="{% url 'rates' %}"><button type="button" class="btn btn-primary">VIEW RATES</button></a>
+    <br />
+    <br />
+    <a href="{% url 'customers' %}"><button type="button" class="btn btn-warning">VIEW CUSTOMERS</button></a>
+    <br />
+    <br />
+    
+    <a href="{% url 'Employee:employees' %}"><button type="button" class="btn btn-warning">VIEW EMPLOYEES</button></a>
+    <br />
+    <br />
+    <a href="{% url 'addEmployee' %}"><button type="button" class="btn btn-warning">ADD EMPLOYEE +</button></a>
+    <br />
+    <br />
+    <a href="{% url 'orders' %}"><button type="button" class="btn btn-warning">VIEW ORDERS</button></a>
+    <br />
+    <br />
+    <a href="{% url 'contacts' %}"><button type="button" class="btn btn-warning">VIEW CONTACTS</button></a>
+    
+</div>

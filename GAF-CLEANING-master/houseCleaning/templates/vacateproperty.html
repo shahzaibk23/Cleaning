@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+
+  </ul>
+	</li>
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h5 style="text-align:center">VACATE PROPERTY CLEANING</h5>
+
+<p>GAF Cleaning Services boasts of catering to alike commercial and residential vacate cleaning. With our expertise and proven techniques, we ensure saving of time and effort. Our industry standard cleaning process provides you with guaranteed excellence at the end.
+    <br>
+    <br>
+    Traits of Our Vacate Cleaning.
+    <br>
+    <br>
+    We are the reliable, experienced, and licensed expert cleaners catering to vacate cleaning. We cover every aspect of cleaning with the guarantee.
+    <br>
+    <br>
+    We know the problems a person faces while making a shift to a new place. Cleaning up the place where you have been residing for years is never going to be an easy task. A spot or an uncleaned surface might debar you from getting the bond money back. However, hiring the right professionals will ensure that you get back the deposit. So, call us and spare yourself from the hassles of vacate cleaning.
+    <br>
+    <br>
+    <h5 style="text-align:center">END OF TENANCY</h5>
+    You know well how much time and effort it takes for an effective end of lease cleaning. It’s the job of the specialist, and when you are looking for the right experts to handle your work efficiently, GAF Cleaning Services is the one you should trust.
+    <br>
+    <br>
+    We Have an Experienced Team
+    <br>
+    <br>
+    We have hands-on experience in helping out people requiring end of lease cleaning. Without a thorough cleaning of the leased property, you can be hassled by your landlord with the amount you wanted to get back.
+    <br>
+    <br>
+    Attention to Individual Need
+    <br>
+    <br>
+    We understand that every individual need is different and requires to be addressed with proper attention. That’s why our expert end of tenancy cleaners create a customised cleaning checklist.
+    <br>
+    <br>
+    Be sure to stay in peace of mind while we get the cleaning job done for you and help in retrieving your bond money back.
+    
+    <br>
+    <br><br>IF YOU WANT TO HIRE US THEN SIGN UP<br>.</p>
+<div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 780px; top: 795px;">
+  <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-success">Sign Up</button></a>
+</div>
+</div>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Our Policies</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+              <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+              <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+              <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="">Services<a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+        
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>

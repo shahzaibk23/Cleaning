@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+  </ul>
+	</li>
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<h1 style="text-align:center">POST BUILDING AND CONSTRUCTION CLEANING</h1>
+
+<p style="text-align:center";>Across multiple sites where construction and cleaning are in progress, we stand out to be one of the reliable and reputed firms that conduct post construction cleaning. Our post construction cleaning services cater to different aspects of cleaning that aim at providing a clean surface, specially customized for the construction industry.
+  <br>
+  <br>GAF Cleaning Services has worked with the most reputed construction companies in the business over the years, putting the final touches on significant projects. Through meticulously planned and ever-adapting strategies, we ensure that our services are above and beyond our clients’ expectations.
+  <br>
+  <br>Over the years, we have included all those principles and strategies that have helped not only the designers, architects, or contractors to carry out with their work, but also to the owners of the residential complexes to ascertain that their shifting remains hassle-free after the construction gets over. Our modern and advanced approach helps us to provide the finest quality of cleaning services for post construction.
+  <br>
+  <br>
+  <h5>OUR CONSTRUCTION CLEANING</h5>
+  <br>
+  <h6>PRE BUILT CLEANING</h6>
+  GAF Cleaning Services prioritize the pre-build clean ups as much as we do the post-build. Therefore, maintaining standard hygiene on the work site prior to the construction beginning is part of our services, ensuring that the site remains a safe place for workers at all times.
+  <br>
+  <h6>MAINTENANCE CLEANING</h6>
+  Cleaning solar panelsWorking to your schedule, we maintain a constant presence on the work site, continuing to maintain the construction area and upholding the highest values and expectations towards worker safety and hygiene standards. Accumulation of dirt, grime or dust is of no consequence for workers as we will periodically eliminate it from the site.
+  <br>
+  <h6>FINAL CLEANING</h6>
+  Once construction work is completed, we work to the highest standards to ensure that the final product is an epitome of professionalism and cleanliness, guaranteeing that the end result displayed for the client is pristine and flawless. Your construction is not complete till we have included our finishing touches on it.<br><br>IF YOU WANT TO HIRE US THEN SIGN UP<br>.</p>
+<div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 790px; top: 750px;">
+  <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-success">Sign Up</button></a>
+</div>
+</div>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Our Policies</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+              <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+              <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+              <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="">Services<a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+        
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>

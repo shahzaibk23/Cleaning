@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="#" class="pull-left" ><img src="{% static 'images/logo4.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+	    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Services  </a>
+	    <ul class="dropdown-menu fade-up">
+        <li><a class="dropdown-item" href="{% url 'carehomes' %}"> Care Homes</a></li>
+        <li><a class="dropdown-item" href="{% url 'carpets' %}"> Carpet </a></li>
+        <li><a class="dropdown-item" href="{% url 'events' %}"> Events </a></li>
+        <li><a class="dropdown-item" href="{% url 'pbandc' %}"> Posts Buildings And Constructions </a></li>
+        <li><a class="dropdown-item" href="{% url 'pwss' %}"> Pressure-Washing-Scrubbing-Sweeping </a></li>
+        <li><a class="dropdown-item" href="{% url 'pubsandclubs' %}"> Pubs And Clubs </a></li>
+        <li><a class="dropdown-item" href="{% url 'retail' %}"> Retail </a></li>
+        <li><a class="dropdown-item" href="{% url 'schoolcu' %}"> Schools/Colleges/Universities </a></li>
+        <li><a class="dropdown-item" href="{% url 'sportsleisure' %}"> Sports </a></li>
+        <li><a class="dropdown-item" href="{% url 'window' %}"> Windows </a></li>
+        <li><a class="dropdown-item" href="{% url 'vacateproperty' %}"> Vocate Property </a></li>
+  </ul>
+	</li>
+      
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h1 style="text-align:center">ENVIRONMENTAL POLICY</h1>
+
+<p style="text-align:center">
+GAF CLEANING SERVICES LTD  recognises that it has a responsibility to the environment beyond legal and regulatory requirements. We are committed to reducing our environmental impact and continually improving our environmental performance as an integral part of our business strategy and operating methods.  We will encourage customers, suppliers and other stakeholders to do the same.
+Responsibility
+GABRIEL ADJEI FOSU, DIRECTOR, is responsible for ensuring that this environmental policy is implemented, however, all employees have a responsibility in their area to ensure that the aims and objectives of this policy are met.
+Policy aims
+We endeavour to:
+•	Comply with all relevant regulatory requirements.
+•	Continually improve and monitor environmental performance.
+•	Continually improve and reduce environmental impacts.
+•	Incorporate environmental factors into business decisions.
+•	Increase employee awareness and training.
+Paper
+We will:
+•	Minimise the use of paper in the office.
+•	Reduce packaging as much as possible.
+•	Seek to buy recycled and recyclable paper products.
+•	Reuse and recycle all paper where possible.
+Energy and water
+We will seek to:
+•	Reduce the amount of energy used as much as possible.
+•	Switch off lights and electrical equipment when not in use.
+•	Adjust heating with energy consumption in mind.
+•	Take energy consumption and efficiency of new products into account when purchasing them.
+Office supplies
+We will:
+•	Evaluate if the need can be met in another way.
+•	Evaluate if renting or sharing is an option before purchasing equipment.
+•	Evaluate the environmental impact of any new products we intend to purchase.
+•	Favour more environmentally friendly and efficient products wherever possible.
+•	Reuse and recycle everything we are able to.
+Transportation
+We will:
+•	Reduce the need to travel, restricting to necessity trips only.
+•	Promote the use of travel alternatives such as e-mail or video/phone conferencing.
+•	Make additional efforts to accommodate the needs of those using public transport or bicycles.
+•	Favour 'green' vehicles and maintain them rigorously to ensure ongoing efficiency.
+Maintenance and cleaning
+We will:
+•	Use cleaning materials that are as environmentally friendly as possible.
+•	Use materials in any office refurbishment that are as environmentally friendly as possible.
+•	Only use licensed and appropriate organisations to dispose of waste.
+Monitoring and improvement
+We will:
+•	Comply with all relevant regulatory requirements.
+•	Continually improve and monitor environmental performance.
+•	Continually improve and reduce environmental impacts.
+•	Incorporate environmental factors into business decisions.
+•	Increase employee awareness through training.
+•	Review this policy and any related business issues at weekly management meetings.
+Culture
+We will:
+•	Update this policy at least once annually in consultation with staff and other stakeholders where necessary.
+•	Involve staff in the implementation of this policy, for greater commitment and improved performance.
+•	Provide staff with relevant environmental training.
+•	Work with suppliers, contractors and subcontractors to improve their environmental performance.
+•	Use local labour and materials where available to reduce CO2 and help the community.
+
+</p>
+
+</div>
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">We are a reliable and trusted company based in Hemel Hempstead and Northampton with over 10 years of experience in commercial and residential cleaning. We mainly specialise in Commercial and Residential cleaning. We have been ensuring integrity, honesty, and reliability in our cleaning services. We deal with all types of cleaning- small, medium, and large-scale projects.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Our Policies</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'datap' %}">Data protection and data security policy</a></li>
+              <li><a href="{% url 'envip' %}">Environmental policy</a></li>
+              <li><a href="{% url 'privatep' %}">Privacy policy</a></li>
+              <li><a href="{% url 'socialp' %}">Social media policy</a></li>
+
+            
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+              <li><a href="">Services<a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+Copyright © 2021 GAF Cleaning Services Ltd. All Rights Reserved. 
+        
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
