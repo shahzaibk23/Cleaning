@@ -12,12 +12,20 @@ class Customer(models.Model):
     fax = models.CharField(max_length=50)
     user = models.OneToOneField(User, blank=True, null=True, on_delete = models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
     def deleteURL(self):
         return reverse("deleteCust", kwargs={"cust_id":self.id})
 
     def bookingsURL(self):
         return reverse("booking", kwargs={"cust_id":self.id})
-        
+
+    def createPropertyURL(self):
+        return reverse("create_property", kwargs={"cust_id":self.id})
+    def viewPropertyURL(self):
+        return reverse("viewProperty", kwargs={"cust_id":self.id})
+    
 
 
 
@@ -66,4 +74,29 @@ class booking(models.Model):
         return reverse("assign", kwargs={"order_id":self.id})
     def completeURL(self):
         return reverse("completeOrder", kwargs={"order_id":self.id})
+
+class create_property(models.Model):
+    customer = models.OneToOneField(Customer, null=True, blank=True, on_delete=models.CASCADE)
+    property_address = models.CharField(max_length=100)
+    property_type = models.CharField(max_length=100)
+    property_size = models.CharField(max_length=100)
+    floor_area_size = models.CharField(max_length=100)
+    floor_plan = models.CharField(max_length=100)
+    floor_type = models.CharField(max_length=100)
+    contract_type = models.CharField(max_length=100)
+    duration = models.CharField(max_length=100)
+    cleaning_requirements = models.CharField(max_length=100)
+    notes =  models.TextField(max_length=1000, null=True, blank=True)
+
+class Suppliers(models.Model):
+    supplier_info = models.CharField(max_length=100)
+    supplier_address = models.CharField(max_length=100)
+    contact_name = models.CharField(max_length=100)
+    fax = models.CharField(max_length=100)
+    tel = models.CharField(max_length=100)
+    note = models.TextField(max_length=1000, null=True, blank=True)
+
+    def deleteURL(self):
+        return reverse("deleteSupplier", kwargs={"sup_id":self.id})
+
 

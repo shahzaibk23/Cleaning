@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from users.views import SignUp,Login, Logout, addEmployees, carehomes, carpets, events, pbandc, pwss, pubsandclubs, retail, schoolcu, sportsleisure, window, vacateproperty, aboutus, contactus, datap, envip, privatep, socialp 
-from pages.views import homePage,viewRates,contactsView, completedOrders, completeOrder, ordersView,assignForm,empOrders, assignEmp ,dashboard, customers, editHourlyRate, deleteCUST, customerBookings, bookingView
+from pages.views import homePage,CreatePropertyView, viewPropertyView, viewRates,printRates, printEmployees, printCustomers, printOrders, printContacts, printSuppliers, deleteSupplierView, AddSupplierView, contactsView,SuppliersView, completedOrders, completeOrder, ordersView,assignForm,empOrders, assignEmp ,dashboard, customers, editHourlyRate, deleteCUST, customerBookings, bookingView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -45,7 +45,18 @@ urlpatterns = [
     path("EmpOrders/<int:emp_id>/", empOrders, name="empOrders"),
     path("completeOrder/<int:order_id>", completeOrder, name="completeOrder"),
     path("completedOrders/", completedOrders, name="completedOrders"),
-    path("contacts/", contactsView, name="contacts")
+    path("contacts/", contactsView, name="contacts"),
+    path("suppliers/",SuppliersView, name="suppliers" ),
+    path("add-supplier/", AddSupplierView, name="addSupplier"),
+    path("delete-supplier/<int:sup_id>/",deleteSupplierView, name="deleteSupplier" ),
+    path("print-supplier/", printSuppliers, name="printSupplier"),
+    path("print-contacts/", printContacts, name="printContacts"),
+    path("print-orders/", printOrders, name="printOrders"),
+    path("print-employees/", printEmployees,name="printEmp"),
+    path("print-customers/", printCustomers, name="printCust"),
+    path("print-rates/", printRates, name="printRates"),
+    path("create-property/<int:cust_id>/", CreatePropertyView, name="create_property"),
+    path("view-property/<int:cust_id>/", viewPropertyView, name="viewProperty")
 
     
 ]

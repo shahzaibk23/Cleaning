@@ -1,5 +1,5 @@
 from django import forms
-from .models import Customer, Employee
+from .models import Customer, Employee, Suppliers, create_property
 from pages.models import ContactUs
 
 class createCustomer(forms.ModelForm):
@@ -35,3 +35,14 @@ class contact_us_form(forms.ModelForm):
     class Meta:
         model = ContactUs
         fields = '__all__'
+
+class SupplierForm(forms.ModelForm):
+    class Meta:
+        model = Suppliers
+        fields = '__all__'
+
+class CreatePropertyForm(forms.ModelForm):
+    class Meta:
+        model = create_property
+        fields = '__all__'
+        exclude = ['customer']

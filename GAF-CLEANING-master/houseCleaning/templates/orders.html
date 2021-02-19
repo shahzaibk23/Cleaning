@@ -51,10 +51,14 @@
     <div class="row" style="justify-content: space-between;">
     <h1> <b> <small>ORDERS</small></b> </h1>
 
+    <div class="row">
    <div class="modal-dialog-centered">
     <a href="{% url 'assignEmp' %}"><button type="button" class="btn btn-success">ASSIGN EMPLOYEES</button></a>
 </div>
-
+<div class="modal-dialog-centered">
+  <a href="{% url 'printOrders' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
+</div>
+</div>
 </div>
 <hr />
     <div class="table-responsive">

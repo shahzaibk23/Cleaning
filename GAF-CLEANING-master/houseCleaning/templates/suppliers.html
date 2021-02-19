@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <title>Document</title>
 </head>
-<body>
+<body class="bg-light">
   
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,58 +45,56 @@
   </div>
 </nav>
 
+<div class="container">
+    <br />
+    <div class="row" style="justify-content: space-between;">
+        <h1> <b> <small>SUPPLIERS</small></b> </h1>
+    <div class="row">
+        
+        <div class="modal-dialog-centered">
+            <a href="{% url 'addSupplier' %}"><button type="button" class="btn btn-success">ADD SUPPLIER</button></a>
+        </div>
+    
+        <div class="modal-dialog-centered">
+            <a href="{% url 'printSupplier' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
+        </div>
+        
 
-<div class="content">
-    <h2 class="modal-dialog-centered">DASHBOARD</h2>
-    <hr />
-    <div class="container">
+    </div>
+    </div>
+<hr />
     <div class="table-responsive">
-    <table class="table table-bordered table-dark">
-      <tbody>
+    <table class="table-bordered table-hover table table-dark table-striped">
+        <thead>
         <tr>
-          <th scope="row"> TOTAL ORDERS </th>
-          <td> {{ total }} </td>
+            <th scope="col"> ID </th>
+            <th scope="col"> SUPPLIER INFORMATION </th>
+            <th scope="col"> SUPPLIER ADDRESS </th>
+            <th scope="col"> CONTACT NAME </th>
+            <th scope="col"> EMAIL </th>
+            <th scope="col"> FAX </th>
+            <th scope="col"> TELEPHONE </th>
+            <th scope="col"> NOTE </th>
+            <th scope="col"> DELETE </th>
         </tr>
-        <tr>
-          <th scope="row"> COMPLETED ORDERS </th>
-          <td> {{ done }} </td> 
+        </thead>
+        <tbody>
+        {% for obj in objs %}
+        <tr class="w-100 h-25">
+            
+            <th scope="row"> {{obj.id}} </th>
+            <td> {{obj.supplier_info}} </td>
+            <td> {{ obj.supplier_address }} </td>
+            <td> {{ obj.contact_name }} </td>
+            <td> {{ obj.email }} </td>
+            <td> {{ obj.fax }} </td>
+            <td> {{ obj.tel }} </td>
+            <td> {{ obj.note }} </td>
+            <td> <a href="{{ obj.deleteURL }}"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
+            </td>
         </tr>
-        <tr>
-          <th scope="row"> ASSIGNED ORDERS </th>
-          <td> {{ assigned }} </td>
-        </tr>
-        <tr>
-          <th scope="row"> PENDING ORDERS </th>
-          <td> {{ pending }} </td>
-        </tr>
-      </tbody>
+        {% endfor %}
+        </tbody>
     </table>
-    <div class="modal-dialog-centered">
-      <a href="{% url 'printRates' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
-    </div>
-    </div>
-    </div>
-
-    <hr />
-    <a href="{% url 'rates' %}"><button type="button" class="btn btn-primary">VIEW RATES</button></a>
-    <br />
-    <br />
-    <a href="{% url 'customers' %}"><button type="button" class="btn btn-warning">VIEW CUSTOMERS</button></a>
-    <br />
-    <br />
-    
-    <a href="{% url 'Employee:employees' %}"><button type="button" class="btn btn-warning">VIEW EMPLOYEES</button></a>
-    <br />
-    <br />
-    <a href="{% url 'addEmployee' %}"><button type="button" class="btn btn-warning">ADD EMPLOYEE +</button></a>
-    <br />
-    <br />
-    <a href="{% url 'orders' %}"><button type="button" class="btn btn-warning">VIEW ORDERS</button></a>
-    <br />
-    <br />
-    <a href="{% url 'contacts' %}"><button type="button" class="btn btn-warning">VIEW CONTACTS</button></a>
-    <br />
-    <br />
-    <a href="{% url 'suppliers' %}"><button type="button" class="btn btn-warning">VIEW SUPPLIERS</button></a>
-    
+</div>
 </div>

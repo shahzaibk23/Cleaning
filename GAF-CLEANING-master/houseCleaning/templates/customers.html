@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers</title>
+    <title>Employees</title>
 </head>
 <body>
-    <h1>CUSTOMERS</h1>
+
+    <h1>EMPLOYEES</h1>
 
     <ol>
-
-    {% for obj in objs %}
-    <li>{{obj.name}}</li>
-    {% endfor %}
-
+        {% for obj in objs %}
+        <li> {{ obj.first_name }} </li>
+        {% endfor %}
     </ol>
     
 </body>
@@ -32,7 +31,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
     <title>Document</title>
 </head>
-<body>
+<body class="bg-light">
   
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -67,23 +66,53 @@
   </div>
 </nav>
 
-<div>
-    <h1> CUSTOMERS </h1>
+<div class="container">
+    <br />
+    <div class="row" style="justify-content: space-between;">
+    <h1> <b> <small>CUSTOMERS</small></b> </h1>
+
+    <div class="row">
+   <div class="modal-dialog-centered">
+    <a href=""><button type="button" class="btn btn-success">ADD CUSTOMER</button></a>
+</div>
+
+<div class="modal-dialog-centered">
+  <a href="{% url 'printCust' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
+</div>
+</div>
+
+</div>
+<hr />
+    <div class="table-responsive">
     <table class="table-bordered table-hover table table-dark table-striped">
         <thead>
-            <tr>
-                <th scope="col"> ID </th>
-                <th scope="col"> NAME </th>
-                <th scope="col"> DELETE </th>
-            </tr>
-        </thead>
-        {% for obj in objs %}
         <tr>
-            <th scope="row"> {{ obj.id }} </th>
+            <th scope="col"> ID </th>
+            <th scope="col"> NAME </th>
+            <th scope="col"> DELETE </th>
+            <th scope="col"> CREATE PROPERTY </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for obj in objs %}
+        <tr class="w-100 h-25">
+            
+            <th scope="row"> {{obj.id}} </th>
             <td> {{obj.name}} </td>
+            
             <td> <a href="{{ obj.deleteURL }}"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
             </td>
+            {% if obj.create_property %}
+            <td> <a href="{{ obj.viewPropertyURL }}"><button type="button" class="btn btn-outline-primary">VIEW PROPERTY</button></a>
+            </td>
+            {% else %}
+            
+            <td> <a href="{{ obj.createPropertyURL }}"><button type="button" class="btn btn-outline-warning">CREATE PROPERTY</button></a>
+            </td>
+            {% endif %}
         </tr>
         {% endfor %}
+        </tbody>
     </table>
+</div>
 </div>

@@ -69,46 +69,52 @@
 <div class="container">
     <br />
     <div class="row" style="justify-content: space-between;">
-    <h1> <b> <small>EMPLOYEES</small></b> </h1>
+    <h1> <b> <small>VIEW PROPERTY</b> ({{ ob.name }}) </small></h1>
 
-    <div class="row">
-   <div class="modal-dialog-centered">
-    <a href="{% url 'Employee:resetAll' %}"><button type="button" class="btn btn-success">RESET ALL</button></a>
-</div>
-<div class="modal-dialog-centered">
-  <a href="{% url 'printEmp' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
-</div>
-</div>
+    
 
 </div>
 <hr />
     <div class="table-responsive">
-    <table class="table-bordered table-hover table table-dark table-striped">
-        <thead>
-        <tr>
-            <th scope="col"> ID </th>
-            <th scope="col"> NAME </th>
-            <th scope="col"> USERNAME </th>
-            <th scope="col"> EARNINGS </th>
-            <th scope="col"> RESET </th>
-            <th scope="col"> DELETE </th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for obj in objs %}
-        <tr class="w-100 h-25">
-            
-            <th scope="row"> {{obj.id}} </th>
-            <td> {{obj.customer.first_name}} </td>
-            <td> {{ obj.customer.user.username }} </td>
-            <td> {{ obj.earnings }} </td>
-            <td> <a href="{{ obj.resetURL }}"><button type="button" class="btn btn-outline-warning">RESET</button></a>
-            </td>
-            <td> <a href="{{ obj.deleteURL }}"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table table-bordered table-dark">
+            <tbody>
+              <tr>
+                <th scope="row"> PROPERTY ADDRESS </th>
+                <td> {{ obj.property_address }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> PROPERTY TYPE </th>
+                <td> {{ obj.property_type }} </td> 
+              </tr>
+              <tr>
+                <th scope="row"> PROPERTY SIZE </th>
+                <td> {{ obj.property_size }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> FLOOR AREA SIZE </th>
+                <td> {{ obj.floor_area_size }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> FLOOR PLAN </th>
+                <td> {{ obj.floor_plan }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> FLOOR TYPE </th>
+                <td> {{ obj.floor_type }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> CONTRACT TYPE </th>
+                <td> {{ obj.contract_type }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> CLEANING REQUIREMEMENTS </th>
+                <td> {{ obj.cleaning_requirements }} </td>
+              </tr>
+              <tr>
+                <th scope="row"> NOTES </th>
+                <td> {{ obj.notes }} </td>
+              </tr>
+            </tbody>
+          </table>
 </div>
 </div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <br />
+    <div class="row" style="justify-content: space-between;">
+    <h1> <b> <small>EMPLOYEES</small></b> </h1>
+
+ 
+
+</div>
+<hr />
+    <div class="table-responsive">
+    <table class="table-bordered table-hover table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col"> NAME </th>
+            <th scope="col"> USERNAME </th>
+            <th scope="col"> EARNINGS </th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        {% for obj in objs %}
+        <tr class="w-100 h-25">
+            
+            <th scope="row"> {{obj.id}} </th>
+            <td> {{obj.customer.first_name}} </td>
+            <td> {{ obj.customer.user.username }} </td>
+            <td> {{ obj.earnings }} </td>
+            
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>

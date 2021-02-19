@@ -1,0 +1,49 @@
+<div class="container">
+    <br />
+    <div class="row" style="justify-content: space-between;">
+    <h1> <b> <small>ORDERS</small></b> </h1>
+</div>
+<hr />
+    <div class="table-responsive">
+    <table class="table-bordered table-hover table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col"> STATUS </th> 
+            <th scope="col"> CUSTOMER </th>
+            <th scope="col"> SERVICE </th>
+            <th scope="col"> TIME </th>
+            <th scope="col"> DATE </th>
+            <th scope="col"> ADDRESS </th>
+            <th scope="col"> PRICE </th>
+            <th scope="col"> ASSIGNED </th>
+            <th scope="col"> EMPLOYEE STIPEND </th>
+            <th scope="col"> PROFIT </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+        <tr class="w-100 h-25">
+            
+            <th scope="row"> {{order.id}} </th>
+            <td> {{ order.status }} </td>
+            <td> {{ order.customer.name }} </td>
+            <td> {{ order.service.name }} </td>
+            <td> {{ order.time }} </td>
+            <td> {{ order.date }} </td>
+            <td> {{ order.address }} </td>
+            <td> {{ order.service.price }} </td>
+            {% if order.employee %}
+            <td> {{ order.employee.customer.first_name }} </td>
+            {% else %}
+            <td>  Unassigned </td>
+            {% endif %}
+            <td> {{ order.stipend }} </td>
+            <td> {{ order.profit }}  </td>    
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+

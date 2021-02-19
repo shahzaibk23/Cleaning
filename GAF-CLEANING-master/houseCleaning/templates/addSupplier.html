@@ -46,43 +46,8 @@
 </nav>
 
 <div class="container">
-    <br />
-    <div class="row" style="justify-content: space-between;">
-    <h1> <b> <small>CONTACTS</small></b> </h1>
-
-    <div class="modal-dialog-centered">
-      <a href="{% url 'printContacts' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
-  </div>
-
-   
-
-</div>
-<hr />
-    <div class="table-responsive">
-    <table class="table-bordered table-hover table table-dark table-striped">
-        <thead>
-        <tr>
-            <th scope="col"> ID </th>
-            <th scope="col"> NAME </th>
-            <th scope="col"> EMAIL </th>
-            <th scope="col"> PHONE </th>
-            <th scope="col"> SUBJECT </th>
-            <th scope="col"> MESSAGE </th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for obj in objs %}
-        <tr class="w-100 h-25">
-            
-            <th scope="row"> {{obj.id}} </th>
-            <td> {{obj.name}} </td>
-            <td> {{ obj.email }} </td>
-            <td> {{ obj.phone }} </td>
-            <td> {{ obj.subject }} </td>
-            <td> {{ obj.message }} </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="ADD +" />
+    </form>
 </div>

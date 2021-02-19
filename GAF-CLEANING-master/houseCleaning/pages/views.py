@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from users.models import Customer, Employee2,Employee, booking
+from users.models import Customer, Employee2,Employee, booking, Suppliers, create_property
 from .models import Panel, ServiceDetails, ContactUs
+from users.forms import SupplierForm, CreatePropertyForm
 
 # Create your views here.
 
@@ -296,3 +297,184 @@ def contactsView(request):
         "objs":objs
     }
     return render(request, "contacts.html", context)
+
+
+login_required(login_url='home')
+def SuppliersView(request):
+    objs = Suppliers.objects.all()
+    context = {
+        "objs":objs
+    }
+    return render(request, "suppliers.html", context)
+
+login_required(login_url='home')
+def AddSupplierView(request):
+    form = SupplierForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('suppliers')
+    context = {
+        "form":form
+    }
+    return render(request,"addSupplier.html", context )
+
+login_required(login_url='home')
+def deleteSupplierView(request, sup_id):
+    if "Admin" in [g.name for g in request.user.groups.all()]:
+        obj = Suppliers.objects.get(id=sup_id)
+        obj.delete()
+        return redirect("suppliers")
+    else:
+        return redirect('home')
+
+
+from xhtml2pdf import pisa  
+from django.http import HttpResponse
+from django.template.loader import get_template
+
+def printSuppliers(request):
+    template_path = 'suppliersTable.html'
+    objs = Suppliers.objects.all()
+    context = {
+        "objs":objs
+    }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+    
+def printContacts(request):
+    template_path = 'contactsTable.html'
+    objs = ContactUs.objects.all()
+    context = {
+        "objs":objs
+    }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+
+def printOrders(request):
+    template_path = 'ordersTable.html'
+    orders = booking.objects.all()
+    context= {
+            "orders":orders
+        }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+
+def printEmployees(request):
+    template_path = 'employeesTable.html'
+    objs = Employee2.objects.all()
+    context = {
+        "objs":objs
+    }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+
+def printCustomers(request):
+    template_path = 'customersTable.html'
+    objs = Customer.objects.all()
+    context = {
+        "objs":objs
+    }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+
+def printRates(request):
+    template_path = 'ratesTable.html'
+    bookings = booking.objects.count
+    done = len([job for job in booking.objects.all() if job.status == "DONE"])
+    assigned = len([job for job in booking.objects.all() if job.status == "ASSIGNED"])
+    pending = len([job for job in booking.objects.all() if job.status == "IN PROGRESS"])
+    context={
+        "total":bookings,
+        "done":done,
+        "assigned":assigned,
+        "pending":pending
+    }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+
+    return response
+
+
+def CreatePropertyView(request, cust_id):
+    customer = Customer.objects.get(id=cust_id)
+    form = CreatePropertyForm(request.POST)
+    
+    
+    if form.is_valid():
+        ob = form.save()
+        ob.customer = customer
+        ob.save()
+        return redirect("customers")
+    context={
+        "customer":customer,
+        "form":form,
+        
+    }
+    return render(request, "create_property.html", context)
+
+def viewPropertyView(request, cust_id):
+    ob = Customer.objects.get(id=cust_id)
+    obj = ob.create_property
+    context = {
+        "ob":ob,
+        "obj":obj
+    }
+    return render(request, "viewProperty.html", context)
