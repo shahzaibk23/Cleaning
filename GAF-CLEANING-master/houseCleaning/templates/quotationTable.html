@@ -1,0 +1,45 @@
+<table class="table-bordered table-hover table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col"> ID </th>
+        <th scope="col"> BUSINESS ADDRESS </th>
+        <th scope="col"> BUSINESS INFORMATION </th>
+        <th scope="col"> CUSTOMER INFORMATION </th>
+        <th scope="col"> CUSTOMER ADDRESS </th>
+        <th scope="col"> CUSTOMER REFERENCE </th>
+        <th scope="col"> P.O NO. </th>
+        <th scope="col"> DISCOUNT </th>
+        <th scope="col"> NOTES </th>
+        <th scope="col"> DUE DATE </th>
+        <th scope="col"> COMPANY NUMBER </th>
+        <th scope="col"> VAT NUMBER </th>
+        <th scope="col"> BANK ACCOUNT NO. </th>
+        <th scope="col"> SORT CODE NO. </th>
+        <th scope="col"> NOTES AND ATTACHMENTS </th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in objs %}
+    <tr class="w-100 h-25">
+        
+        <th scope="row"> {{obj.id}} </th>
+        <td> {{obj.business_address}} </td>
+        <td> {{ obj.business_information}} </td>
+        <td> {{ obj.customer_information }} </td>
+        <td> {{ obj.customer_address }} </td>
+        <td> {{ obj.customer_reference }} </td>
+        <td> {{ obj.po_no }} </td>
+        <td> {{ obj.discount }} </td>
+        <td> {{ obj.notes }} </td>
+        <td> {{ obj.due_date }} </td>
+        <td> {{ obj.company_number }} </td>
+        <td> {{ obj.vat_number }} </td>
+        <td> {{ obj.bank_account_no }} </td>
+        <td> {{ obj.sort_code_no }} </td>
+        <td> {{ obj.notes_and_attachments }} </td>
+        
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

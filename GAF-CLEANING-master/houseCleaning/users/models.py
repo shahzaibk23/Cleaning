@@ -98,5 +98,7 @@ class Suppliers(models.Model):
 
     def deleteURL(self):
         return reverse("deleteSupplier", kwargs={"sup_id":self.id})
+    def editURL(self):
+        return reverse("editSuppliers", kwargs={"sup_id":self.id})
 
 

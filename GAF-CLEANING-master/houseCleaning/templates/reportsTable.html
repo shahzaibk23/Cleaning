@@ -1,0 +1,36 @@
+<table class="table-bordered table-hover table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col"> ID </th>
+        <th scope="col"> PRODUCTIVITY REPORT </th>
+        <th scope="col"> JOB REPORT </th>
+        <th scope="col"> TIME SHEET REPORT </th>
+        <th scope="col"> JOB FINANCIAL REPORT </th>
+        <th scope="col"> QUOTE CREATE </th>
+        <th scope="col"> QUOTE EXPIRED. </th>
+        <th scope="col"> QUOTE CONVERTED BAD DEBTS </th>
+        <th scope="col"> AGED RECIEVEABLES </th>
+        <th scope="col"> ONE OF JOBS </th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in objs %}
+    <tr class="w-100 h-25">
+        
+        <th scope="row"> {{obj.id}} </th>
+        <td> {{obj.productivity_report}} </td>
+        <td> {{ obj.job_report}} </td>
+        <td> {{ obj.time_sheet_report }} </td>
+        <td> {{ obj.job_financial_report }} </td>
+        <td> {{ obj.quote_create }} </td>
+        <td> {{ obj.quote_expired }} </td>
+        <td> {{ obj.quote_converted_bad_debts }} </td>
+        <td> {{ obj.aged_recievables }} </td>
+        <td> {{ obj.one_of_jobs }} </td>
+        
+    
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

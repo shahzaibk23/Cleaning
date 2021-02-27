@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees</title>
+</head>
+<body>
+
+    <h1>EMPLOYEES</h1>
+
+    <ol>
+        {% for obj in objs %}
+        <li> {{ obj.first_name }} </li>
+        {% endfor %}
+    </ol>
+    
+</body>
+</html> -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body class="bg-light">
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid mt-1">
+    <a href="{% url 'home' %}" class="pull-left" ><img src="{% static 'images/logo1.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+         
+	    </ul>
+	</li>
+      
+        </ul>
+        
+        <div class="btn-group mx-2" role="group" aria-label="Basic outlined example"  style="position: absolute; right: 0;">
+          
+          <a href="{% url 'logout' %}"><button type="button" class="btn btn-outline-success">Logout</button></a>
+         
+        </div>
+
+      
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <br />
+    <div class="row" style="justify-content: space-between;">
+    <h1> <b> <small>REPORTS</small></b> </h1>
+
+    <div class="row">
+   <div class="modal-dialog-centered">
+    <a href="{% url 'addReport' %}"><button type="button" class="btn btn-success">ADD REPORT</button></a>
+</div>
+<div class="modal-dialog-centered">
+  <a href="{% url 'downloadReports' %}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
+</div>
+</div>
+
+</div>
+<hr />
+    <div class="table-responsive">
+    <table class="table-bordered table-hover table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col"> PRODUCTIVITY REPORT </th>
+            <th scope="col"> JOB REPORT </th>
+            <th scope="col"> TIME SHEET REPORT </th>
+            <th scope="col"> JOB FINANCIAL REPORT </th>
+            <th scope="col"> QUOTE CREATE </th>
+            <th scope="col"> QUOTE EXPIRED. </th>
+            <th scope="col"> QUOTE CONVERTED BAD DEBTS </th>
+            <th scope="col"> AGED RECIEVEABLES </th>
+            <th scope="col"> ONE OF JOBS </th>
+            <th scope="col"> EDIT </th>
+            <th scope="col"> DELETE </th>
+            <th scope="col"> DOWNLOAD </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for obj in objs %}
+        <tr class="w-100 h-25">
+            
+            <th scope="row"> {{obj.id}} </th>
+            <td> {{obj.productivity_report}} </td>
+            <td> {{ obj.job_report}} </td>
+            <td> {{ obj.time_sheet_report }} </td>
+            <td> {{ obj.job_financial_report }} </td>
+            <td> {{ obj.quote_create }} </td>
+            <td> {{ obj.quote_expired }} </td>
+            <td> {{ obj.quote_converted_bad_debts }} </td>
+            <td> {{ obj.aged_recievables }} </td>
+            <td> {{ obj.one_of_jobs }} </td>
+            
+            <td> <a href="{{ obj.editURL }}"><button type="button" class="btn btn-outline-warning">EDIT</button></a>
+            </td>
+            <td> <a href="{{ obj.deleteURL }}"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
+            </td>
+            <td>
+                <a href="{{ obj.downloadURL }}"><button type="button" class="btn btn-outline-danger">DOWNLOAD</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>

@@ -75,6 +75,7 @@
             <th scope="col"> FAX </th>
             <th scope="col"> TELEPHONE </th>
             <th scope="col"> NOTE </th>
+            <th scope="col"> EDIT </th>
             <th scope="col"> DELETE </th>
         </tr>
         </thead>
@@ -90,6 +91,8 @@
             <td> {{ obj.fax }} </td>
             <td> {{ obj.tel }} </td>
             <td> {{ obj.note }} </td>
+            <td> <a href="{{ obj.editURL }}"><button type="button" class="btn btn-outline-warning">EDIT</button></a>
+            </td>
             <td> <a href="{{ obj.deleteURL }}"><button type="button" class="btn btn-outline-danger">DELETE</button></a>
             </td>
         </tr>

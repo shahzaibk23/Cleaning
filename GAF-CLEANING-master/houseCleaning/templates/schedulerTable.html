@@ -1,0 +1,35 @@
+<table class="table-bordered table-hover table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col"> ID </th>
+        <th scope="col"> JOBS </th>
+        <th scope="col"> START TIME AND DATE </th>
+        <th scope="col"> END TIME AND DATE </th>
+        <th scope="col"> STAFF </th>
+        <th scope="col"> LOCATION </th>
+        <th scope="col"> NOTE </th>
+        <th scope="col"> SCHEDULE CALENDAR </th>
+        <th scope="col"> COLOR CODE </th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in objs %}
+    <tr class="w-100 h-25">
+        
+        <th scope="row"> {{obj.id}} </th>
+        <td> {{obj.jobs}} </td>
+        <td> {{ obj.start_date_and_time }} </td>
+        <td> {{ obj.end_date_and_time }} </td>
+        <td> {{ obj.staff }} </td>
+        <td> {{ obj.location }} </td>
+        <td> {{ obj.note }} </td>
+        <td> {{ obj.schedule_calender }} </td>
+        <td> {{ obj.colorCode }} </td>
+       
+        
+       
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

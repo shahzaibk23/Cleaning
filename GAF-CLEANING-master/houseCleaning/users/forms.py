@@ -27,7 +27,7 @@ class createUserForm(UserCreationForm):
 
 class createEmployeeForm(forms.ModelForm):
     class Meta:
-        model=Employee
+        model=Employee 
         fields='__all__'
         exclude=['user']
 
@@ -46,3 +46,8 @@ class CreatePropertyForm(forms.ModelForm):
         model = create_property
         fields = '__all__'
         exclude = ['customer']
+
+class customerForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = '__all__'

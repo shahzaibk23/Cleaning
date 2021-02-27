@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from users.views import SignUp,Login, Logout, addEmployees, carehomes, carpets, events, pbandc, pwss, pubsandclubs, retail, schoolcu, sportsleisure, window, vacateproperty, aboutus, contactus, datap, envip, privatep, socialp 
-from pages.views import homePage,CreatePropertyView, viewPropertyView, viewRates,printRates, printEmployees, printCustomers, printOrders, printContacts, printSuppliers, deleteSupplierView, AddSupplierView, contactsView,SuppliersView, completedOrders, completeOrder, ordersView,assignForm,empOrders, assignEmp ,dashboard, customers, editHourlyRate, deleteCUST, customerBookings, bookingView
+from pages.views import homePage,addScheduler,editSuppliers, editScheduler, deleteScheduler, downloadScheduler, downloadSchedulers, schedulerView, addReport, editReport,downlaodReport, downlaodReports, deleteReport, reportsView, addQuotation,editQuotation, deleteQuotation, downloadQuotation, downloadQuotations, quotationsView, downloadInvoices, editInvoice, deleteInvoice, downloadInvoice, invoiceView, addInvoice, addCustomerView, CreatePropertyView, viewPropertyView, viewRates,printRates, printEmployees, printCustomers, printOrders, printContacts, printSuppliers, deleteSupplierView, AddSupplierView, contactsView,SuppliersView, completedOrders, completeOrder, ordersView,assignForm,empOrders, assignEmp ,dashboard, customers, editHourlyRate, deleteCUST, customerBookings, bookingView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -48,6 +48,7 @@ urlpatterns = [
     path("contacts/", contactsView, name="contacts"),
     path("suppliers/",SuppliersView, name="suppliers" ),
     path("add-supplier/", AddSupplierView, name="addSupplier"),
+    path("edit-supplier/<int:sup_id>/", editSuppliers, name="editSuppliers"),
     path("delete-supplier/<int:sup_id>/",deleteSupplierView, name="deleteSupplier" ),
     path("print-supplier/", printSuppliers, name="printSupplier"),
     path("print-contacts/", printContacts, name="printContacts"),
@@ -56,7 +57,32 @@ urlpatterns = [
     path("print-customers/", printCustomers, name="printCust"),
     path("print-rates/", printRates, name="printRates"),
     path("create-property/<int:cust_id>/", CreatePropertyView, name="create_property"),
-    path("view-property/<int:cust_id>/", viewPropertyView, name="viewProperty")
+    path("view-property/<int:cust_id>/", viewPropertyView, name="viewProperty"),
+    path("add-customer/", addCustomerView, name="addCustomer"),
+    path("add-invoice/", addInvoice, name="addInvoice"),
+    path("invoices/", invoiceView, name="invoices"),
+    path("invoices/del/<int:inv_id>/", deleteInvoice, name="deleteInvoice"),
+    path("invoice/edit/<int:inv_id>/", editInvoice, name="editInvoice"),
+    path("invoice/download/<int:inv_id>/", downloadInvoice, name="downloadInvoice"),
+    path("invoice/download/", downloadInvoices, name="downloadInvoices"),
+    path("quotations/", quotationsView, name="quotations"),
+    path("quotations/add/", addQuotation, name="addQuotation"),
+    path("quotations/del/<int:quot_id>/", deleteQuotation, name="deleteQuotation"),
+    path("quotations/edit/<int:quot_id>/", editQuotation, name="editQuotation"),
+    path("quotations/download/<int:quot_id>", downloadQuotation, name="downloadQuotation"),
+    path("quotations/download/", downloadQuotations, name="downloadQuotations"),
+    path("reports/" ,reportsView, name="reports"),
+    path("reports/add/", addReport, name="addReport"),
+    path("reports/edit/<int:rep_id>/", editReport, name="editReport"),
+    path("reports/del/<int:rep_id>/", deleteReport, name="deleteReport"),
+    path("reports/download/<int:rep_id>/", downlaodReport, name="downloadReport"),
+    path("reports/download/", downlaodReports, name="downloadReports"),
+    path("scheduler/", schedulerView, name="scheduler"),
+    path("scheduler/edit/<int:sch_id>/", editScheduler, name="editScheduler"),
+    path("scheduler/add/", addScheduler, name="addScheduler"),
+    path("scheduler/delete/<int:sch_id>/", deleteScheduler, name="deleteScheduler"),
+    path("scheduler/download/<int:sch_id>/", downloadScheduler, name="downloadScheduler"),
+    path("scheduler/download/", downloadSchedulers, name="downloadSchedulers")
 
     
 ]
